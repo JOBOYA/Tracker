@@ -42,6 +42,8 @@ const onSubmit = async () => {
     return;
   }
 
+
+
   const transactionData = {
     text: text.value,
     amount: parseFloat(amount.value),
@@ -65,4 +67,3 @@ const onSubmit = async () => {
   amount.value = '';
 };
 </script>
-

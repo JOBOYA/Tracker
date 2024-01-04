@@ -2,16 +2,16 @@
   <h3 class="text-white font-semibold">Historique</h3>
   <div class="table-container overflow-x-auto">
     <table class="table">
-      <thead>
+      <thead  class="bg-gray-700">
         <tr>
-          <th>Texte</th>
+          <th>Titre</th>
           <th>Montant</th>
           <th>Date</th>
           <th>Heure</th>
           <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="divide-y divide-gray-700">
         <tr v-for="transaction in transactions" :key="transaction.id">
           <td>{{ transaction.text }}</td>
           <td class="capitalize select-none whitespace-nowrap font-medium text-xs px-2">

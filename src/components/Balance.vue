@@ -1,6 +1,6 @@
 <template>
   <h4 class="text-white font-semibold">VOTRE SOLDE</h4>
-  <h1 class="text-white font-semibold" id="balance">€{{ total }}</h1>
+  <h1 class="text-gray-500 font-semibold" id="balance">€{{ total }}</h1>
 </template>
 
 <script setup>
