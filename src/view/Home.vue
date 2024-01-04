@@ -13,37 +13,55 @@
 
   
   
-  <script setup>
-  import Header from '../components/Header.vue';
-  import Balance from '../components/Balance.vue';
-  import IncomeExpenses from '../components/IncomeExpenses.vue';
-  import TransactionList from '../components/TransactionList.vue';
-  import AddTransaction from '../components/AddTransaction.vue';
-  import { supabase } from '../api/supabaseClient';
-  
-  
-  import { ref, computed, onMounted } from 'vue';
-  
-  import { useToast } from 'vue-toastification';
-  
-  
-  const toast = useToast();
-  
-  const transactions = ref([]);
-  
-  onMounted(async () => {
+<script setup>
+import { ref, computed, onMounted } from 'vue';
+import { useToast } from 'vue-toastification';
+import { supabase } from '../api/supabaseClient';
+
+import Header from '../components/Header.vue';
+import Balance from '../components/Balance.vue';
+import IncomeExpenses from '../components/IncomeExpenses.vue';
+import TransactionList from '../components/TransactionList.vue';
+import AddTransaction from '../components/AddTransaction.vue';
+
+const toast = useToast();
+const transactions = ref([]);
+
+// Cette fonction récupère les transactions de l'utilisateur connecté
+const fetchTransactions = async () => {
+  const { data: { user } } = await supabase.auth.getUser();
+  await supabase.auth.refreshSession();
+
+  if (user) {
     const { data, error } = await supabase
       .from('transactions')
-      .select('*');
-  
+      .select('*')
+      .eq('user_id', user.id);
+     
+
     if (error) {
+      toast.error('Erreur lors de la récupération des transactions');
       console.error('Error fetching transactions:', error);
     } else {
-      transactions.value = data;
+      
+      transactions.value = data
+      
+
     }
-  });
-  
-  
+  } else {
+    toast.error("Utilisateur non connecté");
+  }
+};
+
+// Appel de fetchTransactions au montage du composant
+onMounted(fetchTransactions);
+
+// fonction lorsqu'une nouvelle transaction est soumise
+const handleTransactionSubmitted = async () => {
+  await fetchTransactions();
+};
+
+
   // Get total
   const total = computed(() => {
     return transactions.value.reduce((acc, transaction) => {
@@ -67,23 +85,17 @@
       .toFixed(2);
   });
   
-  
-  
-  // Submit transaction
-  const handleTransactionSubmitted = (transactionData) => {
-    transactions.value.push({
-      id: generateUniqueId(),
-      text: transactionData.text,
-      amount: transactionData.amount,
-    });
-  
-    saveTransactionsToLocalStorage();
-  
-    toast.success('Transaction added.');
-  };
-  
-  
-  
+
+
+  function generateUniqueId() {
+  return 'xxxx-xxxx-xxxx-xxxx'.replace(/[x]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    return r.toString(16);
+  });
+}
+
+
+
   
   const handleTransactionDeleted = async (id) => {
     console.log('Deleting transaction with ID:', id);

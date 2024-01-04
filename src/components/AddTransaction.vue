@@ -29,40 +29,50 @@ import { supabase } from '../api/supabaseClient';
 
 const text = ref('');
 const amount = ref('');
-
-// Get toast interface
 const toast = useToast();
-
 const emit = defineEmits(['transactionSubmitted']);
+
+
+const handleTransactionSubmitted = async () => {
+  await fetchTransactions();
+};
+
+
 
 const onSubmit = async () => {
   if (!text.value || !amount.value) {
-    // Display a toast error message if either field is empty
     toast.error('Les deux champs doivent être remplis');
     return;
   }
 
-
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) {
+    toast.error("Erreur: Utilisateur non identifié.");
+    return;
+  }
 
   const transactionData = {
     text: text.value,
+    //amount: parseFloat(amount.value),
     amount: parseFloat(amount.value),
     date: new Date().toISOString(),
+    user_id: user.id,
   };
 
-  const { error } = await supabase
+  // Utilisez un nom de variable différent pour éviter la redéclaration.
+  const { error: insertError } = await supabase
     .from('transactions')
     .insert([transactionData]);
 
-  if (error) {
+  if (insertError) {
     toast.error('Erreur d’ajout de transaction');
-    console.error('Error:', error);
+    console.error('Error:', insertError);
   } else {
     toast.success('Transaction ajoutée.');
+    
     emit('transactionSubmitted', transactionData);
   }
 
-  // Clear form fields
   text.value = '';
   amount.value = '';
 };
