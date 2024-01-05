@@ -23,7 +23,7 @@ Vue Expense Tracker is a web and desktop application for personal expense tracki
 Clone the project
 
 ```bash
-  git clone https://github.com/votre_nom_utilisateur/vue-expense-tracker.git
+  git clone https://github.com/JOBOYA/Tracker.git
 ```
 
 Go to the project directory
