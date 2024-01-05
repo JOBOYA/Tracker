@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div class="p-4 sm:p-6 md:p-8 lg:p-10" id="home">
     <Header />
     <Balance :total="total" />
     <IncomeExpenses :income="income" :expenses="expenses" />

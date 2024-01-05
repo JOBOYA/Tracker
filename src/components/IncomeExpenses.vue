@@ -1,12 +1,12 @@
 <template>
-  <div class="inc-exp-container dialog">
-    <div>
-      <h4>REVENUS</h4>
-      <p id="money-plus" class="money plus">+€{{ income }}</p>
+  <div class="inc-exp-container dialog ">
+    <div class="text-center">
+      <h4 class="font-bold text-lg ">REVENUS</h4>
+      <p id="money-plus" class="money plus text-2xl font-semibold">+€{{ income }}</p>
     </div>
-    <div>
-      <h4>DÉPENSES</h4>
-      <p id="money-minus" class="money minus">-€{{ expenses }}</p>
+    <div class="text-center">
+      <h4 class="font-bold text-lg ">DÉPENSES</h4>
+      <p id="money-minus" class="money minus text-2xl font-semibold">-€{{ expenses }}</p>
     </div>
   </div>
 </template>

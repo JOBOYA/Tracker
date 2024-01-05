@@ -145,3 +145,27 @@ input[type='number'] {
 .list li:hover .delete-btn {
   opacity: 1;
 }
+
+
+
+/* Styles pour tablettes */
+@media (min-width: 640px) {
+  body {
+    font-size: 20px; /* Augmenter la taille de la police pour les tablettes */
+  }
+  .money {
+    font-size: 20px;
+  }
+  
+}
+
+/* Styles pour desktop */
+@media (min-width: 1024px) {
+  body {
+    font-size: 2vw; /* Augmenter la taille de la police pour les desktops */
+  }
+  .money {
+    font-size: 2vw;
+  }
+  /* Ajoutez plus de styles personnalisés pour les desktops ici */
+}

@@ -23,7 +23,7 @@
   import { useToast } from 'vue-toastification';
   import { supabase } from '../api/supabaseClient';
   import { useRouter } from 'vue-router';
-  import ConfirmationModal from './ConfirmationModal.vue'; // Assurez-vous d'importer le composant modal
+  import ConfirmationModal from './ConfirmationModal.vue'; 
   
   const toast = useToast();
   const email = ref('');

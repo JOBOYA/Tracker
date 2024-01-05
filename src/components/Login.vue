@@ -12,6 +12,10 @@
         <div>
           <button class="mt-4 nb-button green rounded" type="submit">Login</button>
         </div>
+        <div class="mt-4 text-center">
+        <span class="text-gray-600">Pas de compte ?</span>
+        <router-link to="/register" class="text-blue-600 hover:text-blue-800">Inscription</router-link>
+      </div>
       </form>
 </div>
 
