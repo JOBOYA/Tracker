@@ -30,4 +30,5 @@ coverage
 
 .env
 
-src-tauri
+/src-tauri
+
