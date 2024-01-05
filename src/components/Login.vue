@@ -13,7 +13,19 @@
           <button class="mt-4 nb-button green rounded" type="submit">Login</button>
         </div>
       </form>
-    </div>
+</div>
+
+<div class="mt-40 flex flex-col justify-center items-center">
+  <span class="mb-2">Get the App for Windows</span>
+  <a href="https://github.com/JOBOYA/Tracker/releases/tag/v1" target="_blank">
+    <!-- Logo Windows SVG -->
+    <svg width="50" height="50" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor" d="m0 4.599l13-1.796v12.599H0zm14.599-2L32 0v15.197H14.599zM0 16.803h13v12.599L0 27.599zm14.599 0H32V32l-17.197-2.401z"/>
+    </svg>
+  </a>
+</div>
+
+   
   </template>
   
   <script setup>
