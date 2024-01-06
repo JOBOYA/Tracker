@@ -9,7 +9,9 @@ const {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{vue,ts,tsx,jsx}"],
+  content: ["./src/**/*.{vue,ts,tsx,jsx}",
+
+  "./node_modules/@tremor/**/*.{vue,js,ts,jsx,tsx}",],
   darkMode: "class",
   theme: {
     // rest of the code

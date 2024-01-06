@@ -3,7 +3,8 @@
     <Header />
     <Balance :total="total" />
     <IncomeExpenses :income="income" :expenses="expenses" />
-    <TransactionList
+    <LineChart :transactionsData="transactions" />
+        <TransactionList
       :transactions="transactions"
       @transactionDeleted="handleTransactionDeleted"
     />
@@ -23,6 +24,8 @@ import Balance from '../components/Balance.vue';
 import IncomeExpenses from '../components/IncomeExpenses.vue';
 import TransactionList from '../components/TransactionList.vue';
 import AddTransaction from '../components/AddTransaction.vue';
+import LineChart from '../components/LineChart.vue';
+
 
 const toast = useToast();
 const transactions = ref([]);

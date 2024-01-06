@@ -7,7 +7,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "vue-expense-tracker",
+    "productName": "v-expensetracker",
     "version": "0.1.0"
   },
   "tauri": {
@@ -24,11 +24,10 @@
       "externalBin": [],
       "icon": [
         "icons/favicon.png",
-        "icons/favicon.png",
-        "icons/favicon.png",
         "icons/favicon.ico"
+        
       ],
-      "identifier": "expensetracker",
+      "identifier": "com.v-expensetracker.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,

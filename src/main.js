@@ -5,10 +5,13 @@ import './assets/style.css';
 import router from './route/index.js'; // Assurez-vous que ce chemin est correct
 import App from './App.vue'; // Assurez-vous que ce chemin est correct
 import { supabase } from './api/supabaseClient'; // Importez Supabase
+import VueApexCharts from 'vue3-apexcharts';
+
 
 const app = createApp(App); // Créez l'application Vue avec App.vue
 app.use(Toast);
 app.use(router); // Utilisez vue-router
+app.use(VueApexCharts);
 
 // Ajoutez un guard de route pour vérifier l'authentification avant chaque changement de route
 router.beforeEach((to, from, next) => {

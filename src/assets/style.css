@@ -146,6 +146,10 @@ input[type='number'] {
   opacity: 1;
 }
 
+.chart-container {
+  width: 100%;
+  max-width: 100%;
+}
 
 
 /* Styles pour tablettes */
@@ -158,6 +162,15 @@ input[type='number'] {
   }
   
 }
+
+.header {
+  padding: 1rem; /* Responsive padding */
+}
+.avatar {
+  width: 4rem; /* Responsive avatar size */
+  height: 4rem; /* Responsive avatar size */
+}
+
 
 /* Styles pour desktop */
 @media (min-width: 1024px) {
