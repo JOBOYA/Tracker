@@ -9,6 +9,9 @@
 ![Tauri Logo](https://img.shields.io/badge/-Tauri-FFC300?style=for-the-badge&logo=Tauri&logoColor=black)
 
 
+![Supabase Logo](https://supabase.com/docs/_next/image?url=%2Fdocs%2Fsupabase-dark.svg&w=256&q=75)
+
+
 Vue Expense Tracker is a web and desktop application for personal expense tracking. Built with Vue.js and Tauri, it offers a smooth user experience and an intuitive interface for managing your personal financial transactions. It allows you to track income and expenses, displaying your current balance and a summary of your financial activities.
 
 ## Features
@@ -41,6 +44,5 @@ Install dependencies
 Start the server
 
 ```bash
-  npm run start
+  npm run dev
 ```
-
